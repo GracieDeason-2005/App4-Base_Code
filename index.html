@@ -38,26 +38,26 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 <script>
 
-  	var fp_count = 0; <!-- Keeps track of time food poisoning was pushed-->
-        var sf_count = 0; <!-- keeps track of time cold was pushed-->
+  	var fp_count = 0; <!-- Keeps track of the times food poisoning was pushed-->
+        var sf_count = 0; <!-- keeps track of the times stomach flu was pushed-->
 
 
         function fpAdd(){
             fp_count = fp_count + 1;
 		alert(fp_count);
 
-        } <!-- Adds to food poisoning counts when pushed-->
+        } <!-- Starts at 0, Adds to food poisoning counts when pushed-->
 
         function sfAdd(){
             sf_count = sf_count + 1;
 
-        } <!-- Adds to stomach flu count when pushed-->
+        } <!-- Starts at 0, Adds to stomach flu count when pushed-->
 
 	function changeText(){ <!-- This changes text to comments below-->
 		var percent_sf = sf_count/(fp_count + sf_count)*100 <!-- stomach flu percent code-->
 		var percent_fp = fp_count/(fp_count + sf_count)*100 <!--food poisoning percent code-->
 		var resultText = document.getElementById("results"); <!-- This is what causes results button to work--> 
-		resultText.innerHTML = "Probability it is food poisoning = " + percent_fp + "% <br> Probability it is the stomach flu = " + percent_sf + "%"; <!-- What line is replaced with-->
+		resultText.innerHTML = "Probability it is food poisoning = " + percent_fp + "% <br> Probability it is the stomach flu = " + percent_sf + "%"; <!-- Replaces line with probabilities the code calculates-->
 
 
 	}
@@ -65,7 +65,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 </script>	
 
 
-<!-- THIS STYLE CODE HELPS MAKE YOUR APP LOOK GOOD. PROBABLY DONT MESS WITH IT -->
+<!-- This formats the pages and makes the app look good -->
 <style>	
 .body {
      margin: 0em;
@@ -115,7 +115,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         	<p>Are you sweating excessively?</p><!-- added question one -->
     		</div>
 
-		<a href="#two" onclick="fpAdd();" class="w3-button"> Yes </a> <a href="#two" onclick="sfAdd();" class="w3-button"> No </a><!-- Button moves to page 2 and inputs answer-->
+		<a href="#two" onclick="fpAdd();" class="w3-button"> Yes </a> <a href="#two" onclick="sfAdd();" class="w3-button"> No </a><!-- Button moves to page 2 and adds answer to either food poisoning or stomach flu count-->
 	</div>
 
 
@@ -128,7 +128,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<p>Are you experiencing nausea?</p> <!-- added question 2-->
 		</div>
 
-		<a href="#three" onclick="sfAdd();" class="w3-button"> Yes </a> <a href="#three" onclick="fpAdd();" class="w3-button"> No </a> <!-- Button moves to page 3 and inputs answer-->
+		<a href="#three" onclick="sfAdd();" class="w3-button"> Yes </a> <a href="#three" onclick="fpAdd();" class="w3-button"> No </a> <!-- Button moves to page 3 and inputs answer to either food poisoning or stomach flu count-->
 	</div>
 
 <div class="page" id="three"> <!-- page recognizes that it's question three-->
@@ -140,7 +140,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         	<p>Have you lost weight?</p><!-- added question three -->
     		</div>
 
-		<a href="#four" onclick="sfAdd();" class="w3-button"> Yes </a> <a href="#four" onclick="fpAdd();" class="w3-button"> No </a> <!-- Button moves to page 4 and inputs answer-->
+		<a href="#four" onclick="sfAdd();" class="w3-button"> Yes </a> <a href="#four" onclick="fpAdd();" class="w3-button"> No </a> <!-- Button moves to page 4 and inputs answer to either food poisoning or stomach flu count-->
 	</div>
 
 <div class="page" id="four"> <!-- page recognizes that it's question four-->
@@ -152,7 +152,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         	<p>Are your eyes swelling?</p><!-- added question four -->
     		</div>
 
-		<a href="#results" onclick="fpAdd();" class="w3-button"> Yes </a> <a href="#results" onclick="sfAdd();" class="w3-button"> No </a> <!-- Button moves to results page and inputs answer-->
+		<a href="#results" onclick="fpAdd();" class="w3-button"> Yes </a> <a href="#results" onclick="sfAdd();" class="w3-button"> No </a> <!-- Button moves to results page and inputs answer to either food poisoning or stomach flu count-->
 	</div>
 
 <div class="page" id="results"> <!-- page recognizes that it's results page-->
