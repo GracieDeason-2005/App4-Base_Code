@@ -38,7 +38,28 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 <script>
 
+  var allergy_count = 0; <!-- Keeps track of time allergy was pushed-->
+        var cold_count = 0; <!-- keeps track of time cold was pushed-->
 
+
+        function allergyAdd(){
+            allergy_count = allergy_count + 1;
+		alert(allergy_count);
+
+        } <!-- Adds to allergy counts when pushed-->
+
+        function coldAdd(){
+            cold_count = cold_count + 1;
+        } <!-- Adds to cold count when pushed-->
+
+	function changeText(){ <!-- This changes text to comments below-->
+		var percent_cold = cold_count/(allergy_count + cold_count)*100 <!-- Cold percent code-->
+		var percent_allergy = allergy_count/(allergy_count + cold_count)*100 <!--Allergy percent code-->
+		var resultText = document.getElementById("results"); <!-- This is what causes results button to work--> 
+		resultText.innerHTML = "Probability it is allergies = " + percent_allergy + "% <br> Probability it is a cold = " + percent_cold + "%"; <!-- What line is replaced with-->
+
+
+	}
 
 </script>	
 
