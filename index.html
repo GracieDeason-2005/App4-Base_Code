@@ -39,7 +39,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <script>
 
   	var fp_count = 0; <!-- Keeps track of time food poisoning was pushed-->
-        var cold_count = 0; <!-- keeps track of time cold was pushed-->
+        var sf_count = 0; <!-- keeps track of time cold was pushed-->
 
 
         function fpAdd(){
@@ -48,15 +48,16 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
         } <!-- Adds to food poisoning counts when pushed-->
 
-        function coldAdd(){
-            cold_count = cold_count + 1;
-        } <!-- Adds to cold count when pushed-->
+        function sfAdd(){
+            sf_count = sf_count + 1;
+
+        } <!-- Adds to stomach flu count when pushed-->
 
 	function changeText(){ <!-- This changes text to comments below-->
-		var percent_cold = cold_count/(fp_count + cold_count)*100 <!-- Cold percent code-->
-		var percent_fp = fp_count/(fp_count + cold_count)*100 <!--food poisoning percent code-->
+		var percent_sf = sf_count/(fp_count + sf_count)*100 <!-- stomach flu percent code-->
+		var percent_fp = fp_count/(fp_count + sf_count)*100 <!--food poisoning percent code-->
 		var resultText = document.getElementById("results"); <!-- This is what causes results button to work--> 
-		resultText.innerHTML = "Probability it is food poisoning = " + percent_fp + "% <br> Probability it is the stomach flu = " + percent_cold + "%"; <!-- What line is replaced with-->
+		resultText.innerHTML = "Probability it is food poisoning = " + percent_fp + "% <br> Probability it is the stomach flu = " + percent_sf + "%"; <!-- What line is replaced with-->
 
 
 	}
